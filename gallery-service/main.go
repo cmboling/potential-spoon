@@ -643,6 +643,7 @@ func authnMiddleware(next http.Handler) http.Handler {
 			tokenString := strings.TrimSpace(strings.TrimPrefix(authz, "Bearer"))
 			log.Printf("AuthN: Received bearer token %s", tokenString)
 			log.Printf("AuthN: Received bearer token %s", tokenString)
+			log.Printf("AuthN: Received bearer token %s", tokenString)
 			token, err := jwt.ParseWithClaims(tokenString, &OctoClaims{}, func(token *jwt.Token) (interface{}, error) {
 				// Don't forget to validate the alg is what you expect:
 				//if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
